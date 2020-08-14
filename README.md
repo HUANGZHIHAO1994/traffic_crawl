@@ -16,7 +16,7 @@
 
 ## 二、3picture.py
 
-### 1.样本（windows用户有一处目录需修改）
+### 1.样本（windows用户有一处目录需修改）可以看P3文件夹
 
    <div>
        <img
@@ -28,7 +28,7 @@
 
 ## 三、traffic_road_pic_crawl.py 和 pre_traffic_road.py
 
-### 1.样本（windows用户有一处目录需修改）
+### 1.样本（windows用户有一处目录需修改）可以看total文件夹
 
    <div>
        <img
