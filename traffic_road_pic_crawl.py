@@ -94,7 +94,8 @@ class Traffic:
         picpath = os.path.join(path, self.name)
         if not os.path.exists(picpath):
             os.mkdir(picpath)
-        f = open(picpath + "\\" + road0 + "-" + road1 + time + ".png", "wb")
+        f = open(picpath + "/" + road0 + "-" + road1 + time + ".png", "wb")
+        # win用户： f = open(picpath + "\\" + road0 + "-" + road1 + time + ".png", "wb")
         f.write(data)
         f.close()
 

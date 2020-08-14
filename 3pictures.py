@@ -62,7 +62,8 @@ def pictures3(url, time):
     picpath = os.path.join(path, name[url.split('/')[-1]])
     if not os.path.exists(picpath):
         os.mkdir(picpath)
-    f = open(picpath + "\\" + name[url.split('/')[-1]] + "-" + time + ".png", "wb")
+    f = open(picpath + "/" + name[url.split('/')[-1]] + "-" + time + ".png", "wb")
+    # win用户 ：f = open(picpath + "\\" + name[url.split('/')[-1]] + "-" + time + ".png", "wb")
     f.write(data)
     f.close()
 
