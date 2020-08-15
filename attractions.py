@@ -135,8 +135,10 @@ def attrct():
     chrome_options.add_argument('--disable-gpu')
     driver = webdriver.Chrome(chrome_options=chrome_options)
     driver.get(url)
-    tree_node = etree.HTML(driver.page_source.encode('utf8').decode('unicode_escape'))
+    tree_node = etree.HTML(driver.page_source)
+#     tree_node = etree.HTML(driver.page_source.encode('utf8').decode('unicode_escape'))
 #     print(driver.page_source.encode('utf8').decode('unicode_escape'))
+#     print(driver.page_source)
 #     tree_node = etree.HTML(driver.page_source)
     for i in eval(tree_node.xpath("//pre//text()")[0]):
         code = i["CODE"]
@@ -149,6 +151,7 @@ def attrct():
         ssd = i["SSD"]
         start_time = i["START_TIME"]
         end_time = i["END_TIME"]
+        type_ = i["TYPE"]
         rank = i["RANK"]
         county = i["COUNTY"]
         loc_x = str(i["LOCATION_X"])
@@ -162,7 +165,7 @@ def attrct():
         weather_pow = i["WEATHER_POWER"]
         id = code + "-" + time_.replace(" ", '-').replace(":", '-')
         dict_attrct = {"_id": id, "code": code, "name": name,
-                 "time": time_, "real_time": real_time, "num": num, "max_num": max_num, "ssd": ssd, "start_time": start_time, "end_time": end_time, "rank": rank, "county": county, "loc_x": loc_x, "loc_y": loc_y, "weather_info": weather_info, "weather_des": weather_des, "weather_high": weather_high, "weather_low": weather_low, "weather_dir": weather_dir, "weather_pow": weather_pow}
+                 "time": time_, "real_time": real_time, "num": num, "max_num": max_num, "ssd": ssd, "start_time": start_time, "end_time": end_time, "type": type_, "rank": rank, "county": county, "loc_x": loc_x, "loc_y": loc_y, "weather_info": weather_info, "weather_des": weather_des, "weather_high": weather_high, "weather_low": weather_low, "weather_dir": weather_dir, "weather_pow": weather_pow}
         logger.info(str(dict_attrct))
         try:
             collection.insert_one(dict_attrct)
