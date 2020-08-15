@@ -101,13 +101,14 @@ class Traffic:
 
 
 if __name__ == '__main__':
-    tra = Traffic("高速道路")
-    tra.road1()
-    '''
-    tra = Traffic("地面道路")
-    tra.road1()
-    tra = Traffic("城际道路")
-    tra.road1()
-    tra = Traffic("快速道路")
-    tra.road1()
-    '''
+    while True:
+        tra = Traffic("高速道路")
+        tra.road1()
+        tra2 = Traffic("地面道路")
+        tra2.road1()
+        tra3 = Traffic("城际高速")
+        tra3.road1()
+        tra4 = Traffic("快速道路")
+        tra4.road1()
+        time.sleep(1800)
+    
