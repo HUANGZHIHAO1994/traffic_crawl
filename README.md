@@ -1,5 +1,5 @@
 <div align="left">
-    <img src='http://i1.fuimg.com/724945/b77a8439ea51e080.jpg' height="50" width="50" >
+    <img src='https://ftp.bmp.ovh/imgs/2020/08/b77a8439ea51e080.jpg' height="50" width="50" >
  </div>
 
 # Traffic_crawl
@@ -20,7 +20,7 @@
 
    <div>
        <img
-   src='http://i1.fuimg.com/724945/1aa86f0dcd60fdf6.png?raw=true'         
+   src='https://ftp.bmp.ovh/imgs/2020/08/1aa86f0dcd60fdf6.png?raw=true'         
             >
    </div>
 
@@ -32,7 +32,7 @@
 
    <div>
        <img
-   src='http://i1.fuimg.com/724945/01e8a9739ea54910.png?raw=true'         
+   src='https://ftp.bmp.ovh/imgs/2020/08/01e8a9739ea54910.png?raw=true'         
             >
    </div>
 
