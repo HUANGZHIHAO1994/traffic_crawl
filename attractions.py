@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 '''
 上海旅游景点客流量爬虫
 这个要用到selenium和chromedriver，下载驱动用这个网址：
@@ -136,10 +137,12 @@ def attrct():
     driver = webdriver.Chrome(chrome_options=chrome_options)
     driver.get(url)
     tree_node = etree.HTML(driver.page_source)
+    
 #     tree_node = etree.HTML(driver.page_source.encode('utf8').decode('unicode_escape'))
 #     print(driver.page_source.encode('utf8').decode('unicode_escape'))
 #     print(driver.page_source)
 #     tree_node = etree.HTML(driver.page_source)
+    
     for i in eval(tree_node.xpath("//pre//text()")[0]):
         code = i["CODE"]
         name = str(i["NAME"])
@@ -164,6 +167,7 @@ def attrct():
         weather_dir = i["WEATHER_DIRECTION"]
         weather_pow = i["WEATHER_POWER"]
         id = code + "-" + time_.replace(" ", '-').replace(":", '-')
+
         dict_attrct = {"_id": id, "code": code, "name": name,
                  "time": time_, "real_time": real_time, "num": num, "max_num": max_num, "ssd": ssd, "start_time": start_time, "end_time": end_time, "type": type_, "rank": rank, "county": county, "loc_x": loc_x, "loc_y": loc_y, "weather_info": weather_info, "weather_des": weather_des, "weather_high": weather_high, "weather_low": weather_low, "weather_dir": weather_dir, "weather_pow": weather_pow}
         logger.info(str(dict_attrct))
@@ -171,7 +175,7 @@ def attrct():
             collection.insert_one(dict_attrct)
         except DuplicateKeyError as e:
             pass
-
+    driver.close()
 '''
         try:
             cursor.execute("""INSERT INTO Attraction (id,code,name_,time_,real_time,num,max_num,ssd,start_time,end_time,rank,county,loc_x,loc_y,weather_info,weather_des,weather_high,weather_low,weather_dir,weather_pow) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)""",(id, code, name, time_, real_time, num, max_num, ssd, start_time, end_time, rank, county, loc_x, loc_y, weather_info, weather_des, weather_high, weather_low, weather_dir, weather_pow))
@@ -210,9 +214,9 @@ if __name__ == '__main__':
     logger.addHandler(st)
 
 
-    while True:
-        t = str(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
-        logger.info(t)
-        attrct()
-        time.sleep(900)
+    
+    t = str(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
+    logger.info(t)
+    attrct()
+    
 

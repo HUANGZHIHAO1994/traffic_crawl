@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 '''
 上海各路段交通图片抓取
 抓取网站https://shanghaicity.openservice.kankanews.com/public/road/timing
@@ -33,7 +34,7 @@ USER_AGENTS = [
 # name["2"] = "快速道路"
 # name["3"] = "高速道路"
 # name["4"] = "城际高速"
-
+dir = "/home/huangzhihao/pj/finance/traffic_crawl/"
 
 class Traffic:
     '''
@@ -55,7 +56,7 @@ class Traffic:
         '''
         地面道路
         '''
-        f = open("{}.txt".format(self.name), encoding='utf-8')
+        f = open("{}.txt".format(dir + self.name), encoding='utf-8')
         roads = eval(f.read().encode('utf8').decode('unicode_escape'))
         f.close()
         for road in roads:
@@ -101,14 +102,14 @@ class Traffic:
 
 
 if __name__ == '__main__':
-    while True:
-        tra = Traffic("高速道路")
-        tra.road1()
-        tra2 = Traffic("地面道路")
-        tra2.road1()
-        tra3 = Traffic("城际高速")
-        tra3.road1()
-        tra4 = Traffic("快速道路")
-        tra4.road1()
-        time.sleep(1800)
+    
+    tra = Traffic("高速道路")
+    tra.road1()
+    tra2 = Traffic("地面道路")
+    tra2.road1()
+    tra3 = Traffic("城际高速")
+    tra3.road1()
+    tra4 = Traffic("快速道路")
+    tra4.road1()
+        
     
