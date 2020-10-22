@@ -1,3 +1,3 @@
 #!/bin/bash
 */30 4 * * * /home/huangzhihao/pj/finance/traffic_crawl/tra.sh >> /home/huangzhihao/pj/finance/traffic_crawl/tra.log 2>&1
-*/30 4 * * * /home/huangzhihao/pj/finance/traffic_crawl/attraction.sh >> /home/huangzhihao/pj/finance/traffic_crawl/att.log 2>&11
+*/30 4 * * * /home/huangzhihao/pj/finance/traffic_crawl/attraction.sh >> /home/huangzhihao/pj/finance/traffic_crawl/att.log 2>&1
