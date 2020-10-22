@@ -2,6 +2,10 @@
     <img src='https://ftp.bmp.ovh/imgs/2020/08/b77a8439ea51e080.jpg' height="50" width="50" >
  </div>
 
+![traffic_crawl](https://badgen.net/badge/traffic/crawl?icon=github)
+![linux_shell](https://badgen.net/badge/icon/shell?icon=terminal&label)
+![GitHub license](https://badgen.net/github/license/HUANGZHIHAO1994/traffic_crawl?color=green)
+
 # Traffic_crawl
 
 ## 一、attraction.py
